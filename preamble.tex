@@ -1,0 +1,80 @@
+% ============================================================
+%  PREAMBLE
+%  Everything that comes before \begin{document} lives here:
+%  the document class, all \usepackage lines, and global settings.
+%  This file is pulled into main.tex with \input{preamble}.
+% ============================================================
+\documentclass[12pt]{report}
+
+% ---------- Page geometry & spacing --------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\setlength{\parindent}{30pt}
+
+% ---------- Fonts & encoding ---------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}   % change to [utf8] if your source files are UTF-8
+\usepackage{times,mathptmx}     % Times-like font
+\usepackage{upgreek}
+
+% ---------- Language -----------------------------------------
+\usepackage[english]{babel}
+
+% ---------- Math ---------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{siunitx}
+\sisetup{range-units = single}
+
+% ---------- Figures, tables & floats -------------------------
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{lscape}
+\graphicspath{{./figures/}}
+
+% ---------- Captions -----------------------------------------
+\usepackage{caption}
+\DeclareCaptionFormat{customfigure}{\textbf{\textit{~#1}}#2 #3}
+\captionsetup[figure]{format=customfigure}
+
+% ---------- Lists, color, misc -------------------------------
+\usepackage{enumitem}
+\usepackage{color,xcolor}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage{changepage}
+\usepackage{comment}
+\usepackage{blindtext}                 % placeholder filler text (remove when done)
+\usepackage[defaultlines=3,all]{nowidow}
+
+% ---------- Acronyms -----------------------------------------
+\usepackage[shortcuts]{extdash}
+\usepackage[tooltip,hyperref=true]{acro}
+
+% ---------- Section numbering depth --------------------------
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% ---------- Hyperlinks (load near the end) -------------------
+\usepackage[hidelinks]{hyperref}
+\hypersetup{urlcolor=blue, citecolor=black, linkcolor=black}
+
+% ---------- Bibliography backend -----------------------------
+\usepackage[numbers,sort&compress]{natbib}
+
+% ---------- Rename TOC / abbreviations headings --------------
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+\addto\captionsbritish{\renewcommand{\acronymname}{Abbreviations}}

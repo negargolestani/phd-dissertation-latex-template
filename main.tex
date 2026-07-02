@@ -1,0 +1,184 @@
+% ============================================================
+%  PhD DISSERTATION — MASTER FILE
+%
+%  Template released under the MIT License (see the LICENSE file).
+%  If you reuse this template, please keep the LICENSE file intact.
+%
+%  Compile this file. The preamble (document class, packages,
+%  settings) lives in preamble.tex; the writing lives in the
+%  chapters/ folder.
+%
+%  Build:  pdflatex main -> bibtex main -> pdflatex main -> pdflatex main
+%  (or simply:  latexmk -pdf main.tex)
+% ============================================================
+\input{preamble}      % all \usepackage lines & settings (before \begin{document})
+\input{acronyms}      % \DeclareAcronym definitions (must load before the document)
+
+\begin{document}
+% ============================================================
+
+% ---------- Front matter (roman numerals) -------------------
+\input{chapters/title}
+\newpage
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+\doublespacing
+
+\input{chapters/copyright}
+\newpage
+
+\input{chapters/signatures}
+\newpage
+
+\input{chapters/abstract}
+\newpage
+
+\input{chapters/dedication}
+\addcontentsline{toc}{chapter}{\numberline{}Dedication}%
+\newpage
+
+\chapter*{Acknowledgements}
+\input{chapters/acknowledgements}
+\newpage
+
+\input{chapters/chapter_contributions}
+\newpage
+
+\singlespacing
+
+% ---------- Contents / lists --------------------------------
+\tableofcontents
+\newpage
+
+\listoftables
+\addcontentsline{toc}{chapter}{\numberline{}List of Tables}%
+\newpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\numberline{}List of Figures}%
+\newpage
+
+\chapter*{Abbreviations}
+\printacronyms[heading=none]
+\addcontentsline{toc}{chapter}{\numberline{}Abbreviations}%
+\newpage
+
+\doublespacing
+
+% ---------- Main matter (arabic numerals) -------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ============================================================
+%            CHAPTER 1 — INTRODUCTION
+% ============================================================
+\chapter{Introduction}
+\label{ch:introduction}
+    \section{First section}
+    \input{chapters/chapter1/ch1_intro}
+    \label{sec:ch1_intro}
+        \subsection{A subsection}
+        \input{chapters/chapter1/ch1_background}
+        \label{sec:ch1_background}
+            \subsubsection{A sub-subsection}
+            \input{chapters/chapter1/ch1_details}
+            \label{sec:ch1_details}
+    \section{Second section}
+    \input{chapters/chapter1/ch1_second_section}
+    \label{sec:ch1_second_section}
+\newpage
+
+% ============================================================
+%            CHAPTER 2 — RESULTS CHAPTER (template)
+% ============================================================
+\chapter{Title of Your First Results Chapter}
+\label{ch:ch2}
+    \section{Summary}
+    \label{sec:ch2_summary}
+    \input{chapters/chapter2/ch2_summary}
+
+    \section{Introduction}
+    \label{sec:ch2_intro}
+    \input{chapters/chapter2/ch2_intro}
+
+    \section{Results}
+        \subsection{First result}
+        \label{sec:ch2_result1}
+        \input{chapters/chapter2/ch2_result1}
+        \subsection{Second result}
+        \label{sec:ch2_result2}
+        \input{chapters/chapter2/ch2_result2}
+
+    \section{Discussion}
+    \label{sec:ch2_discussion}
+    \input{chapters/chapter2/ch2_discussion}
+        \subsection{Limitations}
+        \label{sec:ch2_limitations}
+        \input{chapters/chapter2/ch2_limitations}
+        \subsection{Conclusions}
+        \label{sec:ch2_conclusions}
+        \input{chapters/chapter2/ch2_conclusions}
+
+    \section{Methods}
+    \label{sec:ch2_methods}
+    \input{chapters/chapter2/ch2_methods}
+\newpage
+
+% ============================================================
+%            CHAPTER 3 — RESULTS CHAPTER (template)
+% ============================================================
+\chapter{Title of Your Second Results Chapter}
+\label{ch:ch3}
+    \section{Summary}
+    \label{sec:ch3_summary}
+    \input{chapters/chapter3/ch3_summary}
+
+    \section{Introduction}
+    \label{sec:ch3_intro}
+    \input{chapters/chapter3/ch3_intro}
+
+    \section{Results}
+        \subsection{First result}
+        \label{sec:ch3_result1}
+        \input{chapters/chapter3/ch3_result1}
+
+    \section{Discussion}
+    \label{sec:ch3_discussion}
+    \input{chapters/chapter3/ch3_discussion}
+
+    \section{Methods}
+    \label{sec:ch3_methods}
+    \input{chapters/chapter3/ch3_methods}
+\newpage
+
+% ============================================================
+%            CHAPTER 4 — DISCUSSION
+% ============================================================
+\chapter{Discussion}
+\label{ch:ch4_discussion}
+    \section{Overview}
+    \input{chapters/chapter4/ch4_overview}
+    \label{sec:ch4_overview}
+    \section{Future work}
+    \input{chapters/chapter4/ch4_future_work}
+    \label{sec:ch4_future_work}
+    \section{Final thoughts}
+    \input{chapters/chapter4/ch4_final_thoughts}
+    \label{sec:ch4_final_thoughts}
+\newpage
+
+% ============================================================
+%            BIBLIOGRAPHY
+% ============================================================
+\addcontentsline{toc}{chapter}{\numberline{}Bibliography}%
+\begin{singlespace}
+  % plainnat ships with natbib and works everywhere out of the box.
+  % Swap for IEEEtran, apalike, unsrtnat, etc. if your program requires it.
+  \bibliographystyle{plainnat}
+  \bibliography{references}
+\end{singlespace}
+
+% ============================================================
+\end{document}
+% ============================================================
