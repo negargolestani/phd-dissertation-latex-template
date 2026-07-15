@@ -178,5 +178,4 @@ placeholder.
 
 ## Credits
 
-Template created by **Negar Golestani**. If you use it, a link back to this
-repository is appreciated but not required.
+Template created by **Negar Golestani**.
